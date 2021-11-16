@@ -38,13 +38,13 @@ class _LandingState extends State<Landing> {
         color: Colors.white70,
         child: Column(
           children: <Widget>[
-            SizedBox(height: 100,),
-            Text("MY TO DO", style: TextStyle(fontSize: 35, color: Colors.black87, fontWeight:FontWeight.bold),),
+            SizedBox(height: 200,),
+            Text("MY TO DO", style: TextStyle(fontSize: 38, color: Colors.black87, fontWeight:FontWeight.bold),),
 
             SizedBox(height: 20,),
             Text("Aplikasi Catatan Agenda Harian", style: TextStyle(fontSize: 15, color: Colors.black87),),
 
-            SizedBox(height: 300,),
+            SizedBox(height: 200,),
             ElevatedButton(
               onPressed: (){ 
                 Route route = MaterialPageRoute(builder: (context) => Login());
@@ -83,8 +83,8 @@ class _LoginState extends State<Login> {
         color: Colors.white,
         child: Column( 
           children: <Widget>[
-            SizedBox(height: 5,),
-            Text("MY TO DO", style: TextStyle(fontSize: 35, color: Colors.black87, fontWeight:FontWeight.bold)),
+            SizedBox(height: 3,),
+            Text("MY TO DO", style: TextStyle(fontSize: 38, color: Colors.black87, fontWeight:FontWeight.bold)),
 
             SizedBox(height: 20,),
             Text("Aplikasi Catatan Agenda Harian", style: TextStyle(fontSize: 15, color: Colors.black87),),
@@ -101,9 +101,6 @@ class _LoginState extends State<Login> {
                 fillColor: Colors.grey,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(
-                    color: Color(0xFF1CD1E),
-                  ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
@@ -126,9 +123,6 @@ class _LoginState extends State<Login> {
                 fillColor: Colors.grey,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(
-                    color: Color(0xFF1CD1E),
-                  ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
