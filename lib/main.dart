@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:catatan_agenda_flutter/screen/landing.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,148 +8,16 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Aplikasi Catatan Agenda Harian', 
+      title: 'Aplikasi Catatan Agenda',
       theme: ThemeData(
-      primaryColor: Colors.black,
+        primarySwatch: Colors.green,
       ),
-      home: const Landing(title: 'Home Page'),
-    );
-  }
-}
-
-//Membuat landing saat masuk aplikasi
-class Landing extends StatefulWidget {
-  const Landing({Key? key, required this.title}) : super(key: key);
-  final String title;
-
-  @override
-  State<Landing> createState() => _LandingState();
-}
-
-class _LandingState extends State<Landing> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        padding: const EdgeInsets.all(8),
-        color: Colors.white70,
-        child: Column(
-          children: <Widget>[
-            SizedBox(height: 200,),
-            Text("MY TO DO", style: TextStyle(fontSize: 38, color: Colors.black87, fontWeight:FontWeight.bold),),
-
-            SizedBox(height: 20,),
-            Text("Aplikasi Catatan Agenda Harian", style: TextStyle(fontSize: 15, color: Colors.black87),),
-
-            SizedBox(height: 200,),
-            ElevatedButton(
-              onPressed: (){ 
-                Route route = MaterialPageRoute(builder: (context) => Login());
-                Navigator.push(context, route);
-              },
-              style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20)
-                ),
-                primary: Colors.green,
-                onPrimary: Colors.lightGreenAccent,
-                minimumSize: Size(300.0, 45.0)
-              ),
-              child: Text("Mulai",style: TextStyle(fontSize: 15, color: Colors.white),),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-//Membuat halaman login aplikasi
-class Login extends StatefulWidget {
-
-  @override
-  _LoginState createState() => _LoginState();
-}
-
-class _LoginState extends State<Login> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        padding: EdgeInsets.all(100),
-        color: Colors.white,
-        child: Column( 
-          children: <Widget>[
-            SizedBox(height: 3,),
-            Text("MY TO DO", style: TextStyle(fontSize: 38, color: Colors.black87, fontWeight:FontWeight.bold)),
-
-            SizedBox(height: 20,),
-            Text("Aplikasi Catatan Agenda Harian", style: TextStyle(fontSize: 15, color: Colors.black87),),
-
-            SizedBox(height: 70,),
-            Text('Username', style: TextStyle(color: Colors.black)),
-            SizedBox(height: 10,),
-            TextFormField(
-              style: TextStyle(color: Colors.white),
-              decoration: InputDecoration(
-                hintText: 'username',
-                hintStyle: TextStyle(color: Colors.white70),
-                filled: true, 
-                fillColor: Colors.grey,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(
-                    color: Colors.greenAccent,
-                  ),
-                ),
-              ),
-            ),
-
-            SizedBox(height: 30,),
-            Text('Password', style: TextStyle(color: Colors.black)),
-            SizedBox(height: 10,),
-            TextFormField(
-              style: TextStyle(color: Colors.white),
-              decoration: InputDecoration(
-                hintText: 'password',
-                hintStyle: TextStyle(color: Colors.white70),
-                filled: true, 
-                fillColor: Colors.grey,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(
-                    color: Colors.greenAccent,
-                  ),
-                ),
-              ),
-            ),
-
-            SizedBox(height: 30,),
-            ElevatedButton(
-              onPressed: (){},
-              style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20)
-                ),
-                primary: Colors.green,
-                onPrimary: Colors.lightGreenAccent,
-                minimumSize: Size(300.0, 45.0)
-              ),
-              child: Text("Masuk",style: TextStyle(fontSize: 15, color: Colors.white),),
-            ),
-          ],
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      home: Landing(),
     );
   }
 }
